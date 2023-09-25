@@ -10,10 +10,10 @@ import net.minecraft.recipe.Ingredient;
 public class DarkAxeMaterial implements ToolMaterial {
     public static final DarkAxeMaterial INSTANCE = new DarkAxeMaterial();
     public int getDurability(){
-        return 500;
+        return 750;
     }
     public float getMiningSpeed(){
-        return 0.8f;
+        return 20.0f;
     }
     public float getAttackDamage(){
         return 2.0f;
@@ -28,7 +28,7 @@ public class DarkAxeMaterial implements ToolMaterial {
         return Ingredient.ofItems(Items.ROTTEN_FLESH);
     }
     public float getMiningSpeedMultiplier(){
-        return 1.0f;
+        return 3.0f;
     }
     
 
