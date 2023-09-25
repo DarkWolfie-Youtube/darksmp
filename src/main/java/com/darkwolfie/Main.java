@@ -4,18 +4,21 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.darkwolfie.items.DarkAxe;
+import com.darkwolfie.items.DarkAxeMaterial;
 
 public class Main implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -23,7 +26,8 @@ public class Main implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("darksmp");
 	public static final String MOD_ID = "darksmp";
-	public static final DarkAxe DARK_AXE = new DarkAxe(new FabricItemSettings().maxCount(1));
+	public static final ToolItem DARK_AXE = new AxeItem(DarkAxeMaterial.INSTANCE, 2.0f, 1.0f, new FabricItemSettings().maxCount(1).rarity(Rarity.EPIC));
+	
 	private final ItemGroup SICK_CREATIVE_INVENTORY = FabricItemGroup.builder().icon(() -> new ItemStack(DARK_AXE)).displayName(Text.translatable("itemGroup.tutorial.test_group")).build();
 	@Override
 	public void onInitialize() {
