@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "darksmp",
+	"version": "0.0.1",
+	"name": "DarkSMP",
+	"description": "This mod was made for the DarkSMP",
+	"authors": [
+		"DarkWolfie"
+	],
+	"contact": {
+		"homepage": "https://darkwolfie.com"
+		
+	},
+	"license": "MIT",
+	"icon": "assets/darksmp/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.darkwolfie.Main"
+		],
+		"client": [
+			"com.darkwolfie.ExampleModClient"
+		],
+		"fabric-datagen": [
+			"com.darkwolfie.ExampleModDataGenerator"
+		]
+	},
+	"mixins": [
+		"darksmp.mixins.json",
+		{
+			"config": "darksmp.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
