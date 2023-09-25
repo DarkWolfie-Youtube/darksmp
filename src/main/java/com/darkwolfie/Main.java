@@ -24,7 +24,7 @@ public class Main implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("darksmp");
 	public static final String MOD_ID = "darksmp";
 	public static final DarkAxe DARK_AXE = new DarkAxe(new FabricItemSettings().maxCount(1));
-	private final ItemGroup SICK_CREATIVE_INVENTORY = Registry.register(Registries.ITEM_GROUP, new Identifier(MOD_ID, "sick_creative_inventory"), FabricItemGroup.builder().icon(() -> new ItemStack(DARK_AXE)).displayName(Text.translatable("itemGroup.tutorial.test_group")).build());
+	private final ItemGroup SICK_CREATIVE_INVENTORY = FabricItemGroup.builder().icon(() -> new ItemStack(DARK_AXE)).displayName(Text.translatable("itemGroup.tutorial.test_group")).build();
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
